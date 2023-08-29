@@ -49,7 +49,7 @@ const locale_zh = {
     Shape: "形状标注",
     Icon: "图标标注",
     Text: "文字标注",
-    Mask: "遮罩",
+    // Mask: "遮罩",
     Filter: "滤镜",
     Bold: "加粗",
     Italic: "斜体",
@@ -104,7 +104,9 @@ const locale_zh = {
     Hand: "拖拽",
     History: "历史",
     Load: "本地图片上传",
-
+    Width: "宽度",
+    Height: "高度",
+    "Lock Aspect Ratio": "等比例",
     // etc...
 };
 const customTheme = {
@@ -121,11 +123,13 @@ const customTheme = {
     "common.bisize.height": "0px",
     "common.backgroundImage": "none",
     "common.border": "1px solid #444",
+
+    "Mask.display": "none",
 };
 const img1 =
     "https://gimg3.baidu.com/search/src=http%3A%2F%2Fpics1.baidu.com%2Ffeed%2F83025aafa40f4bfb34053bdc0866f0fcf6361812.jpeg%40f_auto%3Ftoken%3Dee2d57666cd27c587703661edb6ffc85&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=f360,240&n=0&g=0n&q=75&fmt=auto?sec=1691514000&t=38ac49f490517a164749a5ed7eecfbc3";
 const img2 =
-    "http://hlwtest.deskpro.cn/ljyy/choptest/src/public/images/login-box-img.png";
+    "https://img1.baidu.com/it/u=3888243655,1390725140&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333";
 function downloadBase64Img(base64URL, fileName) {
     // 创建a标签，用于触发下载
     const a = document.createElement("a");
@@ -173,6 +177,17 @@ export default {
                     menuBarPosition: "bottom",
                     locale: locale_zh, // 本地化语言为中文
                     theme: customTheme,
+                    menu: [
+                        "resize",
+                        "crop",
+                        "rotate",
+                        "draw",
+                        "shape",
+                        "icon",
+                        "text",
+                        "filter",
+                        "flip",
+                    ], // 底部菜单按钮列表 隐藏镜像flip和遮罩mask
                 },
             }
         );
@@ -202,6 +217,17 @@ export default {
                             menuBarPosition: "bottom",
                             locale: locale_zh, // 本地化语言为中文
                             theme: customTheme,
+                            menu: [
+                                "resize",
+                                "crop",
+                                "rotate",
+                                "draw",
+                                "shape",
+                                "icon",
+                                "text",
+                                "filter",
+                                "flip",
+                            ], // 底部菜单按钮列表 隐藏镜像flip和遮罩mask
                         },
                     }
                 );
